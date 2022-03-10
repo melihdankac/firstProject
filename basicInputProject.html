@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 100em;
+        background-color: aliceblue;
+      }
+
+      .myPage {
+        background-color: maroon;
+        padding: 5em;
+        position: fixed;
+        top: 1em;
+        transform: translate(50%);
+        right: 50%;
+      }
+      .myPage div {
+        margin: 1em;
+      }
+      #myConclusion {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="myPage">
+      <div><input type="text" name="myInputOne" id="myInputOne" /></div>
+      <div><input type="text" name="myInputTwo" id="myInputTwo" /></div>
+      <div><button onclick="show(this)" id="myButton">Show</button></div>
+
+      <div id="myConclusion"></div>
+    </div>
+
+    <script>
+      function show(e) {
+        const inputOne = Number(document.getElementById("myInputOne").value);
+        const inputTwo = Number(document.getElementById("myInputTwo").value);
+        let conclusion = inputOne + inputTwo;
+        console.log(conclusion);
+        document.getElementById("myConclusion").innerText =
+          inputOne + " + " + inputTwo + " = " + conclusion;
+        document.getElementById("myInputOne").innerHTML = "";
+        document.getElementById("myInputTwo").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
